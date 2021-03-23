@@ -64,8 +64,11 @@ while True:
  
  
  #Display robo parameters
- print("Your robot param")
-
+ print( "Your robot parameters:\nhp = %d"%hp + " %" )
+ print( "\nBattery Charging Indicator:" )
+ print( "%d"%charge + " %")
+ print( "=" * charge )
+ print( "\nMoney = %d"%money + " $")
 
 
 # ############# DRAWING THE MAP #######################
