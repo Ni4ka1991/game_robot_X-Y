@@ -57,9 +57,14 @@ while True:
  if(( hp > 0) and (charge > 0 )):
   
   #meeting results
-  if((( roboX == bomb_1X ) or ( roboX == bomb_2X )) and (( roboY == bomb_1Y) or (roboY == bomb_2Y ))):
+
+  if((( roboX == bomb_1X ) and ( roboY == bomb_1Y )) or (( roboX == bomb_2X) and (roboY == bomb_2Y ))):
    hp -= 20
    print("hp -= 20")
+ 
+ 
+ #Display robo parameters
+ print("Your robot param")
 
 
 
