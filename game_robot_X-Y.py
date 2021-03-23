@@ -44,11 +44,11 @@ money     = 0   #$
 
 #Field parameters
 
-height  = int( input( "Insert the height of field: " ))
-width   = int( input( "Insert the width of field: " ))
+height  = int( input( "Insert the height of field. Optimal 20. >>> " ))
+width   = int( input( "Insert the width of field. Optimal 20. >>> " ))
 
 
-
+#LOGIC
 
 while True:
  system( "clear" )
@@ -57,17 +57,37 @@ while True:
  if(( hp > 0) and (charge > 0 )):
   
   #meeting results
-
+   
+   #with bombs
   if((( roboX == bomb_1X ) and ( roboY == bomb_1Y )) or (( roboX == bomb_2X) and (roboY == bomb_2Y ))):
    hp -= 20
    
+   #with hearts 
   elif((( roboX == heart_1X ) and ( roboY == heart_1Y )) or (( roboX == heart_2X) and (roboY == heart_2Y ))):
+   
    if(( hp < 100 ) and ( charge < 100 )):
     hp += 20
+   
     if( charge <= 50 ):
      charge += 50
+   
     else:
      charge = 100
+   
+   #with money_bags 
+  elif((( roboX == money_bag_1X ) and ( roboY == money_bag_1Y )) or (( roboX == money_bag_2X) and (roboY == money_bag_2Y ))):
+   money  += 20
+   charge += 10
+ 
+#if robo in bad condition  
+ else:
+  if( charge == 0 ):
+   print( "Battery low. Game over" )
+   break
+    
+  elif( hp == 0 ):
+   print( "Health points = 0. Game over" )
+   break
    
    
  
@@ -79,6 +99,7 @@ while True:
  print( "%d"%charge + " %")
  print( "=" * charge )
  print( "\nMoney = %d"%money + " $")
+
 
 
 # ############# DRAWING THE MAP #######################
