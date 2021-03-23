@@ -99,7 +99,7 @@ while True:
  print( "%d"%charge + " %")
  print( "=" * charge )
  print( "\nMoney = %d"%money + " $")
-
+ print( "ACTUAL COORDINATES: X = %d; Y = %d\n"%( roboX, roboY ))
 
 
 # ############# DRAWING THE MAP #######################
@@ -156,22 +156,47 @@ while True:
 # #################### CONTROLS #####################
 
  direction = input( "dir ( w/s/a/d/x ) > " )
-
- if( direction == "w" ):
-  roboY -= 1
-  charge -= 5
-
- if( direction == "s" ):
-  roboY += 1
-  charge -= 5
-
+  
+ 
  if( direction == "a" ):
-  roboX -= 1
-  charge -= 5
+  if( roboX > 0 ): 
+   roboX -= 1
+   charge -= 5
+  else:
+   roboX = 5
+   roboY = 5
+   print( "Change direction. You can move only in right." )
+   input( "hit ENTER to continue" )
 
  if( direction == "d" ):
-  roboX += 1
-  charge -= 5
+  if( roboX < height ):
+   roboX += 1
+   charge -= 5
+  else:
+   roboX = 5
+   roboY = 5
+   print( "Change direction. You can move only in left." )
+   input( "hit ENTER to continue" )
+
+ if( direction == "s" ):
+  if( roboY < width ):
+   roboY += 1
+   charge -= 5
+  else:
+   roboY = 5
+   roboX = 5
+   print( "Change direction. You can move only in up." )
+   input( "hit ENTER to continue ")
+
+ if( direction == "w" ):
+  if( roboY > 0 ):
+   roboY -= 1
+   charge -= 5
+  else:
+   roboY = 5
+   roboX = 5
+   print( "Change direction. You can move only in down." )
+   input( "hit ENTER to continue" )
 
  if( direction == "x" ):
   system( "clear" )
