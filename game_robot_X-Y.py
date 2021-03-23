@@ -62,6 +62,12 @@ while True:
    hp -= 20
    
   elif((( roboX == heart_1X ) and ( roboY == heart_1Y )) or (( roboX == heart_2X) and (roboY == heart_2Y ))):
+   if(( hp < 100 ) and ( charge < 100 )):
+    hp += 20
+    if( charge <= 50 ):
+     charge += 50
+    else:
+     charge = 100
    
    
  
