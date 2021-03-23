@@ -60,10 +60,14 @@ while True:
 
   if((( roboX == bomb_1X ) and ( roboY == bomb_1Y )) or (( roboX == bomb_2X) and (roboY == bomb_2Y ))):
    hp -= 20
-   print("hp -= 20")
+   
+  elif((( roboX == heart_1X ) and ( roboY == heart_1Y )) or (( roboX == heart_2X) and (roboY == heart_2Y ))):
+   
+   
  
  
  #Display robo parameters
+
  print( "Your robot parameters:\nhp = %d"%hp + " %" )
  print( "\nBattery Charging Indicator:" )
  print( "%d"%charge + " %")
