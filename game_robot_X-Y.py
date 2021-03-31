@@ -6,11 +6,8 @@ from os import system
 #w - move up
 #s - move down
 
-
-
 #DATA
  #coordinates
-
 
 roboX        = 5
 roboY        = 5
@@ -33,14 +30,11 @@ heart_1Y     = 5
 heart_2X     = 12
 heart_2Y     = 7
 
-
  #robo parameters
 
 charge    = 100 #percents
 hp        = 100 #percents
 money     = 0   #$
-
-
 
 #Field parameters
 
@@ -88,9 +82,6 @@ while True:
   elif( hp == 0 ):
    print( "Health points = 0. Game over" )
    break
-   
-   
- 
  
  #Display robo parameters
 
@@ -202,8 +193,3 @@ while True:
   system( "clear" )
   print( "Thank you for playing!" )
   break
-
-
-
-
-
